@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  spring-boot-postgres:
+    restart: always
+    image: postgres:latest
+    container_name: spring-boot-postgres
+    volumes:
+      - /var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=docker
+  spring-boot-postgresql:
+    restart: always
+    image: naresh240/spring-boot-docker-postgresql
+    container_name: spring-boot-postgresql
+    ports:
+      - 8080:8080
+    links:
+      - spring-boot-postgres:postgres 
