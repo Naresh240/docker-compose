@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  springboot-mongodb:
+    image: naresh240/springboot-mongodb:latest
+    ports:
+      - 8080:8080
+    networks:
+      - springboot
+    depends_on:
+      - mymongodb
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+      restart_policy:
+        condition: on-failure
+  mymongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - springboot
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+networks:
+  springboot:
