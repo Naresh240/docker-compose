@@ -1,5 +1,4 @@
-volumes:
-    db_data: {}
+version: "3"
 
 services:
   mysqldb:
