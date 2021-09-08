@@ -13,3 +13,7 @@
   http://18.205.106.9:5000/insertemployee
  
   http://18.205.106.9:5000/listofemployees
+  
+# Docker run commands:
+  docker run --name python-mysql --link mysqldb -p 5000:5000 -d python-mysql:v1
+  docker run --name mysqldb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Admin#123 -e MYSQL_DATABASE=mysqldb -e MYSQL_USER=naresh -e MYSQL_PASSWORD=Naresh#240 -d mysql:5.7
