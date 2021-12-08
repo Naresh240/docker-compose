@@ -26,3 +26,4 @@ services:
         constraints: [node.role == manager]
 networks:
   springboot:
+    driver: overlay
