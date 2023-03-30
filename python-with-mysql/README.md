@@ -1,19 +1,21 @@
 # python-with-mysql-database
 
-# Pre-Requisites:
+## 1. Manual Approch
+## Pre-Requisites:
     Mysql Database Setup
     Install python, pip
-# Mysql Database Setup
+## Mysql Database Setup
   [Mysql SetUp](https://github.com/Naresh240/Mysql-Database-Setup/blob/main/README.md)
-# Install required modules using below command
+## Install required modules using below command
     pip install -r requirements.txt
-# Run Application
+## Run Application
     python application.py
-# Open Port number 5000 with security group and check output with in WebUI
+## Open Port number 5000 with security group and check output with in WebUI
   http://18.205.106.9:5000/insertemployee
  
   http://18.205.106.9:5000/listofemployees
 
+## 2. Docker Approch
 ### Docker Build
 
 ```bash
@@ -29,7 +31,7 @@ docker run --name mysqldb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Admin#123 -d mysql
 docker run --name python-app --link mysqldb -p 5000:5000 -d naresh240/python-app:v1
 ```
 
-### Run with Docker compose
+### 3. Docker compose Approch
 
 ```bash
 docker-compose up -d
