@@ -10,14 +10,11 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=Admin#123
-      - MYSQL_DATABASE=mysqldb
-      - MYSQL_USER=naresh
-      - MYSQL_PASSWORD=Naresh#240
     networks:
       - mysql_network
   python-application:
     restart: always
-    image: naresh240/python-with-database:latest
+    image: naresh240/python-app:v1
     container_name: python-application
     ports:
       - 5000:5000
