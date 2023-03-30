@@ -15,7 +15,7 @@
  
   http://18.205.106.9:5000/listofemployees
 
-## 2. Docker Approch
+## 2. Docker Run Approch
 ### Docker Build
 
 ```bash
