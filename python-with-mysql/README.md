@@ -37,3 +37,13 @@ docker run --name python-app --link mysqldb -p 5000:5000 -d naresh240/python-app
 docker-compose up -d
 docker-compose down
 ```
+
+
+### Docker Stack Deploy under swam
+
+```bash
+docker stack deploy --compose-file python-stack.yml python-deploy
+docker network ls
+docker stack ls
+docker stack rm python-deploy
+```
