@@ -16,20 +16,16 @@ services:
       placement:
         constraints: [node.role == manager]
   python-application:
-    image: naresh240/python-app:v5
+    image: naresh240/python_app:v1
     ports:
       - 5000:5000
-    depends_on:
-      - mysqldb
     networks:
       - mysql_network
     deploy:
       replicas: 3
-      update_config:
-        parallelism: 2
-      restart_policy:
-        condition: on-failure
-
+      placement:
+        constraints:
+          - node.role == worker
 volumes:
     db_data: {}
 
