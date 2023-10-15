@@ -3,7 +3,7 @@ import mysql.connector
 
 app = Flask(__name__)
 
-mysqldb = mysql.connector.connect(host="mysqldb",user="root",passwd="Naresh#240",database="mysql")
+mysqldb = mysql.connector.connect(host="mysqldb",user="root",passwd="Admin#123",database="mysql")
 my_database=mysqldb.cursor()
 
 @app.route('/insertemployee', methods=['POST', 'GET'])
