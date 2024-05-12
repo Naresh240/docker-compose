@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mysqldb:
-    image: mysql:5.7
+    image: mysql:8.0
     container_name: mysqldb
     volumes:
       - db_data:/var/lib/mysql
@@ -14,7 +14,7 @@ services:
       - mysql_network
   python-application:
     restart: always
-    image: naresh240/python-app:v1
+    image: pythonapp:v1
     container_name: python-application
     ports:
       - 5000:5000
