@@ -8,7 +8,7 @@ my_database=mysqldb.cursor()
 
 @app.route('/insertemployee', methods=['POST', 'GET'])
 def insertemployee():
-    my_database.execute("CREATE TABLE IF NOT EXISTS employee(empno VARCHAR(20),empname VARCHAR(20),salary VARCHAR(20))")	
+    my_database.execute("CREATE TABLE IF NOT EXISTS employee(empno VARCHAR(20),empname VARCHAR(20),salary VARCHAR(20))")
     mysqldb.commit()
 
     if request.method == "POST":
@@ -28,6 +28,6 @@ def listofemployees():
         my_database.execute("select * from employee")
         result = my_database.fetchall()
         return render_template('listofemployees.html', result=result)
-    
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000,debug=True)
